@@ -1,10 +1,12 @@
-
 rn -- Simple, Regex-Based Bulk File Renaming
 ============================================
 
 rn is a little Perl script that takes a regular expression and a
 list of files as input, applies the regular expression to each
 filename, and renames the file to the result.
+
+Files whose names do not match the pattern won't be changed, and 
+files that don't exist get silently ignored.
 
 Examples
 --------
@@ -15,8 +17,17 @@ lower-case 'b':
 
     rn 's/^b/^B/' *txt
 
-Convert spaces to underscores in every file in foo:
+Convert spaces to underscores in every file in `./foo`:
 
     rn 's/\s/_/g' foo/*
+    
+Given that the directory `./foo/` contains three files:
+`foo.txt`, `bar.txt`, `baz.txt`, change the first 'a' in any
+filename to an 'i':
+
+    rn 's/a/i/' ./foo/*
+    
+...after running `rn`, `./foo` will contain `foo.txt`, `bir.txt`,
+and `biz.txt`.
 
 
