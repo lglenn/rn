@@ -8,6 +8,11 @@ filename, and renames the file to the result.
 Files whose names do not match the pattern won't be changed, and 
 files that don't exist get silently ignored.
 
+This is based on an early example in one of the first O'Reilly
+Perl books, which I read OMG like twenty years ago. It's possible
+that I've totally plagiarized it, but I have a feeling that neither 
+is my memory good enough, nor my Perl elegant enough.
+
 Examples
 --------
 
