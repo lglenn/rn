@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+
+use strict;
+
+my $pattern = shift;
+
+foreach my $old (@::ARGV) {
+  my $new = $old;
+  eval qq|\$new =~ $pattern|;
+  rename $old, $new;
+}
