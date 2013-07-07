@@ -1,0 +1,22 @@
+
+rn -- Simple, Regex-Based Bulk File Renaming
+============================================
+
+rn is a little Perl script that takes a regular expression and a
+list of files as input, applies the regular expression to each
+filename, and renames the file to the result.
+
+Examples
+--------
+
+Capitalize the first letter of the name of every .txt file
+which is in the current directory and whose name starts with a
+lower-case 'b':
+
+    rn 's/^b/^B/' *txt
+
+Convert spaces to underscores in every file in foo:
+
+    rn 's/\s/_/g' foo/*
+
+
